@@ -1,0 +1,152 @@
+h1#FindYour {
+    width: 70vw;
+    cursor: default;
+    font-size: 3vw;
+    color: white;
+    text-shadow: black 2px 2px 4px;
+    z-index: 1;
+  }
+  
+  h2 {
+    margin-top: 0px;
+    margin-left: 28px;
+    margin-bottom: 0px;
+    width: 20vw;
+    position: relative;
+    font-size: 28px;
+    color: white;
+    text-shadow: black 3px 3px 4px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  
+  
+  
+  body {
+    max-width: 100%;
+    background-image: url("../../assets/woodBG.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 1000px rgba(0, 0, 0, 1) inset;
+    margin: 0px;
+  }
+  
+  input#addressEntry {
+  width: 40vw;
+    height: 2.5vw;
+    font-size: 1.5vw;
+    border-style: none;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  
+  }
+  
+  .BeerReviews{
+    width: 100%;
+  }
+  
+  img#taps {
+    width: 100%;
+    height: auto;
+  }
+  
+  img#review {
+    width: 50vh;
+    height: auto;
+  }
+  
+  
+  img#featured {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  html {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+  
+  .container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .centered {    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+  
+  
+  .pint1 {
+    /* border-style: solid; */
+    border-color: white;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    transform: translate(-50%, -10px);
+    left: 50%;
+  }
+  
+  .pint2 {
+    /* border-style: solid; */
+    border-color: white;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-13px, -10px);
+    left: 50%;
+    z-index: 10;
+  }
+  
+  .pint3 {
+    /* border-style: solid; */
+    border-color: white;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-13px, -10px);
+    left: 50%;
+  }
+  
+  
+  #hr2A {
+    width: 48%;
+    transform: translate(-26vw, -8px);
+  }
+  
+  #hr2B {
+    width: 48%;
+    transform: translate(25.72vw, -18px);
+  }
+  
+  #featuredBrewery{
+    margin-top: -70px;
+    height: 85vh;
+    background-color: gray;
+    z-index: 0;
+  }
+  #blackout{
+    margin-top: -28px;
+    height: 20px;
+    background-color: black;
+  }
