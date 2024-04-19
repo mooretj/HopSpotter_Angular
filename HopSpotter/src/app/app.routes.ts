@@ -5,6 +5,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { BreweriesComponent } from './breweries/breweries.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { RegisterComponent } from './register/register.component';
+import { BeerListComponent } from './beer-list/beer-list.component';
+import { BreweryDetailsComponent } from './brewery-details/brewery-details.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {
@@ -23,11 +26,20 @@ export const routes: Routes = [
     title: 'Log Out',
   },
   {
-    path: 'breweries/:breweryId',
+    path: 'breweries',
     component: BreweriesComponent,
   },
   {
-    path: 'beers/:beerId',
+    path: 'breweries/:breweryId',
+    component: BreweryDetailsComponent,
+  },
+  {
+    path: 'breweries/0/beers',
+    component: BeerListComponent,
+    title: 'All Beers'
+  },
+  {
+    path: 'breweries/:breweryId/beers/:beerId',
     component: BeerDetailsComponent,
   },
   {
@@ -35,4 +47,9 @@ export const routes: Routes = [
     component: RegisterComponent,
     title: 'Register'
   },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
+    title: 'Whoopsie'
+  }
 ];

@@ -1,1 +1,127 @@
-<p>brewery-details works!</p>
+<div class="container">
+    <img id="banner" src="../../assets/kegs.jpg" alt="">
+    <div class="centered">
+      <h1 id="FindYour">{{ brewery?.breweryName }}</h1>
+    </div>
+  </div>
+
+
+<div class="BreweryDetailsMain" id="overlay">
+  <div class='top-container'>
+    <div id="two" class="BreweryDetails">
+      <div class="details-left">
+        <div class="history">
+          <img id="BreweryImage" class="BreweryImage" :src="{{ brewery?.breweryMainImg }}" alt="">
+          <div class="history-details">
+            <label>About Us: </label><br>
+            <span>{{ brewery?.history }}</span>
+          </div>
+        </div>
+        <div class="beers">
+          <!-- <BeerList /> -->
+          <!-- <button class="btn-see-beers"
+            v-on:click="$router.push({ name: 'BeerListView', params: { breweryId: brewery.brewery_id } })">See
+            Beers</button> -->
+        </div>
+        <!-- 
+    <div class='return'>
+      <button @click="this.$router.push({ name: 'BreweryListView' })">Back to Breweries</button>
+    </div> -->
+        <!-- <div class="edit" v-if="getBrewers">
+        <button class="btn-edit-contact" v-on:click="editContact" >Edit Contact Info</button>
+    </div> -->
+      </div>
+      <br>
+      <div class='bottom-details'>
+        <div class='contact'>
+          <label class="contact-label">Contact Info:</label>
+
+          <span class='contact-info'>{{ brewery?.breweryContact?.breweryAddress }}</span>
+
+          <span class='contact-info'>{{ brewery?.breweryContact?.phone }}</span>
+
+          <span class='contact-info'>{{ brewery?.breweryContact?.email }}</span>
+
+          <a class='contact-info' :href=brewery.website target='_blank'>{{ brewery?.breweryName }} Website</a>
+
+          <div class="edit-contact" v-if="JSON.stringify(this.$store.state.user) !== '{}' && this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'">
+              <button class="btn-edit-contact" v-on:click="editContact">Edit Contact Info</button>
+            </div>
+        </div>
+        
+
+        <!-- <div class="details-right"> -->
+        <div class="hours">
+          <label class='hours-label'>Hours of Operation:</label>
+          <table id="week">
+            <!-- <tr>
+                <th>Day</th>
+                <th>Open</th>
+                <th>Close</th>
+              </tr> -->
+            <tr>
+              <td class='day'>Sunday</td>
+              <!-- <td>{{ sundayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.sunday_open) }}</td>
+              <td>{{ sundayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.sunday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Monday</td>
+              <!-- <td>{{ mondayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.monday_open) }}</td>
+              <td>{{ mondayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.monday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Tuesday</td>
+              <!-- <td>{{ tuesdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.tuesday_open) }}</td>
+              <td>{{ tuesdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.tuesday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Wednesday</td>
+              <!-- <td>{{ wednesdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.wednesday_open) }}</td>
+              <td>{{ wednesdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.wednesday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Thursday</td>
+              <!-- <td>{{ thursdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.thursday_open) }}</td>
+              <td>{{ thursdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.thursday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Friday</td>
+              <!-- <td>{{ fridayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.friday_open) }}</td>
+              <td>{{ fridayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.friday_close) }}</td> -->
+            </tr>
+            <tr>
+              <td class='day'>Saturday</td>
+              <!-- <td>{{ saturdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.saturday_open) }}</td>
+              <td>{{ saturdayNull ? "CLOSED" : this.convertTime(brewery.brewery_hours.saturday_close) }}</td> -->
+            </tr>
+          </table>
+          <!-- <div class='edit-actions'
+            v-if='(JSON.stringify(this.$store.state.user) !== "{}" && (this.$store.state.user.authorities[0].name == "ROLE_ADMIN" || getBrewers))'> -->
+            <div class='edit-actions'
+            v-if="JSON.stringify(this.$store.state.user) !== '{}' && this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'">
+
+            <div class="edit-hours">
+              <button class="btn-edit-hours" v-on:click="editHours">Edit Hours of Operation</button>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- </div> -->
+
+        <!-- <div class="beers">
+      <button class="btn-see-beers"
+        v-on:click="$router.push({ name: 'BeerListView', params: { breweryId: brewery.brewery_id } })">See Beers</button>
+    </div> -->
+
+
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+</div>

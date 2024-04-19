@@ -1,1 +1,38 @@
-<p>breweries works!</p>
+<div class="brewMap">
+  <div class="map">
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1E6x1Dagt6pIMuxneEINkxGuYs8o0vIs&ehbc=2E312F&noprof=1"
+      width="600" height="600"></iframe>
+  </div>
+  <div class="brewlist">
+    <div class="brewery-for">
+      @for (brewery of breweries; track brewery) {
+      <a [routerLink]="['/breweries/', brewery.breweryId]">
+        <div class="brewery">
+          <img class="logo" src="{{ brewery.breweryMainImg }}" alt="" />
+          <h2 class="center">{{ brewery.breweryName }}</h2>
+        </div>
+      </a>
+      }
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="addbrewery"
+  v-if='JSON.stringify(this.$store.state.user) !== "{}" && this.$store.state.user.authorities[0].name == "ROLE_ADMIN"'>
+  <button class="add-brewery" v-on:click="$router.push({ name: 'AddBreweryView' })"> Add Brewery </button>
+
+</div>
+<div class="loading" v-if="isLoading">
+  <p>Loading...</p>
+</div>
+<div v-else class="breweries">
+
+  <div class="container">
+    <div v-show="showList">
+    </div>
+  </div>
+</div>

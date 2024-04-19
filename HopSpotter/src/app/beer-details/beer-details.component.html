@@ -1,1 +1,60 @@
-<p>beer-details works!</p>
+<div class="container">
+    <img id="banner" src="../assets/brews.jpg" alt="">
+    <div class="centered">
+      <h1 id="FindYour"></h1>
+    </div>
+</div>
+<div class="all">
+<div class="content-centered">
+<div class="beer-content">
+    <img class="beerImage" >
+  </div>
+  <div class='beer-details'>
+  <div class="beerImage">
+    <img class='beer-img' >
+  </div>
+  <div class='beer-details'>
+
+    <div class="description">
+      <label class='label'>Description:</label>
+      <div class='detail'></div>
+    
+    <div class="stats">
+      <div class="abv inline">
+        <label class='label'>ABV:&nbsp;</label>
+        <div class='detail'>%</div>
+      </div>
+
+      <div class="type inline">
+        <label class='label'> Type:&nbsp;</label>
+        <div class='detail'></div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+
+  <!-- <div class='review-list'>
+    <ReviewList />
+  </div> -->
+  
+
+
+  <!-- <div>
+    <button class='reviews' @click="$router.push({ name: 'ReviewListView', params: {beerId: beerId} })">See Reviews</button>
+  </div> -->
+  <div class='buttons'>
+    <!-- <div class="actions"
+      v-show='JSON.stringify(this.$store.state.user) !== "{}" && this.$store.state.user.authorities[0].name == "ROLE_ADMIN" || this.$store.state.user.brewer == true'> -->
+      <button class="btn-edit">Edit</button>
+      <button class="btn-delete" >Delete</button>
+    <!-- </div> -->
+
+    <div class='return'>
+      <button class='back-to-brewery'
+        >More
+        From This Brewery</button>
+    </div>
+  </div>
+</div>

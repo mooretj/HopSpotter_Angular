@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class='topContainer'>
+    <div id="login">
+      <form v-on:submit.prevent="login">
+        <h1 >Please Sign In</h1>
+
+        <!-- TODO: Change these divs to use @If syntax...
+            
+        <div role="alert" v-if="invalidCredentials">
+          Invalid username and password!
+        </div>
+  
+        <div role="alert" v-if="this.$route.query.registration">
+          Thank you for registering, please sign in.
+        </div> -->
+  
+        <div class="form-input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" v-model="user.username" required autofocus />
+        </div>
+  
+        <div class="form-input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model="user.password" required />
+        </div>
+  
+        <button type="submit">Sign in</button>
+        <a [routerLink]="['/register']">Need an account?</a>
+        
+      </form>
+    </div>
+  </div>

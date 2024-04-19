@@ -1,4 +1,4 @@
-<main>
+<body>
   <a id="logo" [routerLink]="['/']">
     <img src="./assets/HopSpotter.png"
     id="logo"
@@ -7,8 +7,8 @@
   <header>
     <div id="topnav" class="topnav">
       <a [routerLink]="['/']">&nbsp;Home</a>&nbsp;|&nbsp;
-      <a [routerLink]="['/breweries/:breweryId']">Brewery Map</a>&nbsp;|&nbsp;
-      <a [routerLink]="['/breweries/:breweryId/beers']">Beers</a>&nbsp;
+      <a [routerLink]="['/breweries']">Brewery Map</a>&nbsp;|&nbsp;
+      <a [routerLink]="['/breweries/0/beers']">Beers</a>&nbsp;
     </div>
 
     <div id="topnav" class="topnav">
@@ -25,7 +25,7 @@
     <div id="nav">
       <a [routerLink]="['/']">Home</a>&nbsp;|&nbsp;
       <a [routerLink]="['/breweries']">Brewery Map</a>&nbsp;|&nbsp;
-      <a [routerLink]="['/breweries/:breweryId/beers']">Beers</a>&nbsp;
+      <a [routerLink]="['/breweries/0/beers']">Beers</a>&nbsp;
     </div>
     <div>
     <p class="aboutus">
@@ -38,4 +38,4 @@
   </div>
   </footer>
 
-</main>
+</body>

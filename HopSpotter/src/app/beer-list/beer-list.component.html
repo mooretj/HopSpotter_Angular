@@ -1,0 +1,44 @@
+<div class="container" v-if='this.$route.params.breweryId == 0'>
+    <img id="banner" src="../assets/glasses.jpg" alt="">
+    <div class="centered">
+      <h1 id="FindYour">Beer List</h1>
+    </div>
+</div>
+<!-- <div class="loading" v-if="isLoading">
+  <p>Loading...</p>
+</div> -->
+
+<div v-else class="lowercontainer">
+<div class='list'>
+
+    @if (!isLoading) {
+        @for (beer of beerList; track beer) {
+            <a [routerLink]="['/breweries/', beer.breweryId, '/beers/', beer.beerId]">
+                <div class="beer">
+                <h2 class="beer-name">{{ beer.beerName }}</h2>
+                </div>
+            </a>
+        } @empty {
+            <p>The beers must be in another castle!</p>
+        }  
+    }
+
+    @else {
+        <p>Loading Beer List...</p>
+    }
+
+      
+  
+  <div class="beer-for" v-for="beer in beers" v-bind:key="beer.beerId">
+    
+  </div>
+  
+</div>
+<button class="btn-add" v-on:click="addBeer" v-if='JSON.stringify(this.$store.state.user) !== "{}" && this.$store.state.user.authorities[0].name == "ROLE_ADMIN" && this.$route.params.breweryId != 0 || this.$store.state.user.brewer == true '>Add Beer</button>
+<br>
+<!-- <div v-if='this.$route.params.breweryId != 0'>
+  <div class='return'>
+    <button @click="this.$router.push({ name: 'BreweryDetailsView', params: {breweryId: this.$route.params.breweryId}})">Back to brewery</button>
+  </div>
+</div> -->
+</div>
