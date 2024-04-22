@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { BreweriesComponent } from '../breweries/breweries.component';
+import { BeerListComponent } from '../beer-list/beer-list.component';
 import { ActivatedRoute } from '@angular/router';
 import { Brewery } from '../brewery';
 import { BreweriesService } from '../breweries.service';
@@ -7,7 +7,7 @@ import { BreweriesService } from '../breweries.service';
 @Component({
   selector: 'app-brewery-details',
   standalone: true,
-  imports: [],
+  imports: [BeerListComponent],
   templateUrl: './brewery-details.component.html',
   styleUrl: './brewery-details.component.scss'
 })
@@ -19,8 +19,8 @@ export class BreweryDetailsComponent {
   breweriesService: BreweriesService = inject(BreweriesService)
 
   constructor() {
-    const breweryid = Number(this.route.snapshot.params["breweryId"])
-    this.brewery = this.breweriesService.getBreweryById(this.breweryId);
+    const breweryId = Number(this.route.snapshot.params["breweryId"])
+    this.brewery = this.breweriesService.getBreweryById(breweryId);
   }
 
   // brewery1: Brewery = {

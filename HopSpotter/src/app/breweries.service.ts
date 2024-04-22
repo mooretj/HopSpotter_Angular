@@ -75,8 +75,8 @@ export class BreweriesService {
     return this.breweriesList;
   }
 
-  getBreweryById(id: number): Brewery | undefined {
-    return this.breweriesList.find((brewery) => brewery.breweryId === id);
+  getBreweryById(breweryId: number): Brewery | undefined {
+    return this.breweriesList.find((brewery) => brewery.breweryId === breweryId);
   }
 
   constructor() { }
