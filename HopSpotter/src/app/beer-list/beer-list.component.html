@@ -11,7 +11,7 @@
 <div v-else class="lowercontainer">
 <div class='list'>
 
-    @if (!isLoading) {
+
         @for (beer of beerList; track beer) {
             <a [routerLink]="['breweries', beer.breweryId, 'beers', beer.beerId]">
                 <div class="beer">
@@ -20,12 +20,7 @@
             </a>
         } @empty {
             <p>The beers must be in another castle!</p>
-        }  
-    }
-
-    @else {
-        <p>Loading Beer List...</p>
-    }
+        } 
 
       
   

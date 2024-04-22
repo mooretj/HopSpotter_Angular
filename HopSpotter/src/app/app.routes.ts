@@ -34,7 +34,7 @@ export const routes: Routes = [
     component: BreweryDetailsComponent,
   },
   {
-    path: 'breweries/0/beers',
+    path: 'breweries/:breweryId/beers',
     component: BeerListComponent,
     title: 'All Beers'
   },

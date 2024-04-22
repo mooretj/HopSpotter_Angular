@@ -1,6 +1,7 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Beer } from '../beer';
+import { BeersService } from '../beers.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -9,47 +10,24 @@ import { Beer } from '../beer';
   templateUrl: './beer-list.component.html',
   styleUrl: './beer-list.component.scss',
 })
-export class BeerListComponent implements AfterViewInit {
-  
-  isLoading = true;
+export class BeerListComponent  {
 
+  beerList: Beer[] = [];
+  beerService: BeersService = inject(BeersService);
+  route: ActivatedRoute = inject(ActivatedRoute)
 
-  beer1: Beer = {
-    beerId: 997,
-    breweryId: 888,
-    beerName: 'Test Beer1',
-    beerDescription: 'Tasty Beer',
-    imgUrl: '../../assets/beer4.jpg',
-    abv: 5,
-    type: 'Pilsner',
-  };
+  constructor() {
 
-  beer2: Beer = {
-    beerId: 998,
-    breweryId: 888,
-    beerName: 'Test Beer2',
-    beerDescription: 'Tasty Beer',
-    imgUrl: '../../assets/beer4.jpg',
-    abv: 5,
-    type: 'Pilsner',
-  };
+    const breweryId = +this.route.snapshot.params["breweryId"];
 
-  beer3: Beer = {
-    beerId: 999,
-    breweryId: 888,
-    beerName: 'Test Beer3',
-    beerDescription: 'Tasty Beer',
-    imgUrl: '../../assets/beer4.jpg',
-    abv: 5,
-    type: 'Pilsner',
-  };
+    console.log(breweryId);
 
-  beerList: Beer[] = [this.beer1, this.beer2, this.beer3];
-
-  
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
+    if(breweryId === 0) {
+      this.beerList = this.beerService.getAllBeers();
+    }
+    else {
+    this.beerList = this.beerService.getBeersByBreweryId(breweryId);
+    }
   }
+
 }
