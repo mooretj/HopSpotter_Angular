@@ -1,4 +1,3 @@
-import { Time } from "@angular/common"
 
 export interface Brewery {
     breweryId: number,
@@ -14,19 +13,19 @@ export interface Brewery {
     },
     breweryHours: {
         brewery_id: number,
-                    sundayOpen: undefined,
-                    sundayClose: undefined,
-                    mondayOpen: undefined,
-                    mondayClose: undefined,
-                    tuesdayOpen: undefined,
-                    tuesdayClose: undefined,
-                    wednesdayOpen: undefined,
-                    wednesdayClose: undefined,
-                    thursdayOpen: undefined,
-                    thursdayClose: undefined,
-                    fridayOpen: undefined,
-                    fridayClose: undefined,
-                    saturdayOpen: undefined,
-                    saturdayClose: undefined,
+                    sundayOpen: string,
+                    sundayClose: string,
+                    mondayOpen: string,
+                    mondayClose: string,
+                    tuesdayOpen: string,
+                    tuesdayClose: string,
+                    wednesdayOpen: string,
+                    wednesdayClose: string,
+                    thursdayOpen: string,
+                    thursdayClose: string,
+                    fridayOpen: string,
+                    fridayClose: string,
+                    saturdayOpen: string,
+                    saturdayClose: string,
     }
 }

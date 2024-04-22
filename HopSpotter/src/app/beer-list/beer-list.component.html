@@ -13,7 +13,7 @@
 
     @if (!isLoading) {
         @for (beer of beerList; track beer) {
-            <a [routerLink]="['/breweries/', beer.breweryId, '/beers/', beer.beerId]">
+            <a [routerLink]="['breweries', beer.breweryId, 'beers', beer.beerId]">
                 <div class="beer">
                 <h2 class="beer-name">{{ beer.beerName }}</h2>
                 </div>
