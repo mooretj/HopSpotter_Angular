@@ -45,7 +45,7 @@ export class ReviewsService {
       username: "user1",
       title: "Pretty Good",
       body: "lorem ipsum yadda yadda",
-      rating: 4
+      rating: 5
     },
     {
       reviewId: 6,
@@ -69,7 +69,7 @@ export class ReviewsService {
       username: "user1",
       title: "Pretty Good",
       body: "lorem ipsum yadda yadda",
-      rating: 3
+      rating: 1
     },
     {
       reviewId: 9,

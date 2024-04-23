@@ -47,7 +47,7 @@ export class BeersService {
     )
   }
 
-  getBeerDetails(beerId: number) {
+  getBeerDetails(beerId: number | undefined) {
     return (this.beerList.find(
       (beer) => beer?.beerId === beerId)
     )

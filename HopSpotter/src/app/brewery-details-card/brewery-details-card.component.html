@@ -1,9 +1,9 @@
-<div class="BreweryDetailsMain" id="overlay" :style="`background-image: url{{ brewery?.breweryMainImg }};`">
+<div class="BreweryDetailsMain" style="background-image: url('../{{ brewery?.breweryMainImg }}')">
     <div class="dim">
         <div class="featuredBrewery">
     <div class="name">
         <h1 class="brewery-name">{{ brewery?.breweryName }}</h1>
-        <img class="brewery-img" :src="brewery.brewery_main_img" alt=""/>
+        <img class="brewery-img" :src="{{ brewery?.breweryMainImg }}" alt=""/>
     </div>
 
     <div class="BreweryDetails">
