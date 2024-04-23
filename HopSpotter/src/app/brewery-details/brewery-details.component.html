@@ -17,8 +17,17 @@
             <span>{{ this.brewery?.history }}</span>
           </div>
         </div>
-        <div class="beers">
-          <app-beer-list />
+        
+        <div class="list">
+          @for (beer of beerList; track beer) {
+            <a [routerLink]="['/breweries', beer.breweryId, 'beers', beer.beerId]">
+                <div class="beer">
+                <h2 class="beer-name">{{ beer.beerName }}</h2>
+                </div>
+            </a>
+        } @empty {
+            <p>The beers must be in another castle!</p>
+        } 
           <!-- <BeerList /> -->
           <!-- <button class="btn-see-beers"
             v-on:click="$router.push({ name: 'BeerListView', params: { breweryId: brewery.brewery_id } })">See
@@ -43,7 +52,7 @@
 
           <span class='contact-info'>{{ brewery?.breweryContact?.email }}</span>
 
-          <a class='contact-info' :href=brewery?.website target='_blank'>{{ brewery?.breweryName }} Website</a>
+          <a class='contact-info' :href="{{ brewery?.website }}" target='_blank'>{{ brewery?.breweryName }} Website</a>
 
           <div class="edit-contact" v-if="JSON.stringify(this.$store.state.user) !== '{}' && this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'">
               <button class="btn-edit-contact" v-on:click="editContact">Edit Contact Info</button>

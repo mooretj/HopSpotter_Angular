@@ -10,7 +10,7 @@ export class BeersService {
     {
       beerId: 997,
       breweryId: 888,
-      beerName: 'Test Beer1',
+      beerName: 'Test Beer 1',
       beerDescription: 'Tasty Beer',
       imgUrl: '../../assets/beer4.jpg',
       abv: 5,
@@ -19,19 +19,19 @@ export class BeersService {
     {
       beerId: 998,
       breweryId: 888,
-      beerName: 'Test Beer2',
-      beerDescription: 'Tasty Beer',
+      beerName: 'Test Beer 2',
+      beerDescription: 'Yummy Beer',
       imgUrl: '../../assets/beer4.jpg',
-      abv: 5,
+      abv: 50,
       type: 'Pilsner',
     },
 {
       beerId: 999,
       breweryId: 777,
-      beerName: 'Test Beer3',
-      beerDescription: 'Tasty Beer',
+      beerName: 'Test Beer 3',
+      beerDescription: 'Delicious Beer',
       imgUrl: '../../assets/beer4.jpg',
-      abv: 5,
+      abv: 500,
       type: 'Pilsner',
     }
   ];
@@ -44,6 +44,12 @@ export class BeersService {
   getBeersByBreweryId(breweryId: number) {
     return (this.beerList.filter(
       (beer) => beer?.breweryId === breweryId)
+    )
+  }
+
+  getBeerDetails(beerId: number) {
+    return (this.beerList.find(
+      (beer) => beer?.beerId === beerId)
     )
   }
 

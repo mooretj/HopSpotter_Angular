@@ -184,3 +184,38 @@
   .btn-edit-hours {
     width: 300px;
   }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .beer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-wrap: wrap;
+    width: 25vw;
+    height: 5vw;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #CA801B;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: black;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 1);
+    transition: .2s;
+    min-width: 25vw;
+  }
+  
+  .beer-name {
+    font-size: 1.25vw;
+  translate: -10px;
+  }
+  
+  .beer:hover {
+    border-color: whitesmoke;
+    background-color: rgba(0,0,0,1);
+  }

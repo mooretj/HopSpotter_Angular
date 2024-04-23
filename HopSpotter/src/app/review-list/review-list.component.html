@@ -1,0 +1,21 @@
+<h1>Reviews</h1>
+
+
+@for (review of reviews; track review){
+    <div class='review-display'>
+    <h2>{{ review.title }}</h2>
+    <h4>{{ review.body }}</h4>
+    <div class="rating">
+        <h3 class='username'>- {{ review?.username }}</h3>
+        <div class='pints-rating'>
+                    <p>{{ review.rating }}/5 pints</p>
+
+                    @for(rating of getRatingArray(review.rating); track rating) {
+                    <img src="../assets/pint.png" class="ratingStar"/>
+                    }
+                </div> 
+    </div>
+    </div>
+} @empty {
+    <h1>Reviews Not Found :(</h1>
+}

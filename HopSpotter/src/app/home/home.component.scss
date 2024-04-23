@@ -1,4 +1,4 @@
-h1#FindYour {
+#FindYour {
     width: 70vw;
     cursor: default;
     font-size: 3vw;
@@ -37,7 +37,7 @@ h1#FindYour {
   //   box-shadow: 0 0 1000px rgba(0, 0, 0, 1) inset;
   //   margin: 0;
   
-  input#addressEntry {
+  #addressEntry {
   width: 40vw;
     height: 2.5vw;
     font-size: 1.5vw;
@@ -51,18 +51,18 @@ h1#FindYour {
     width: 100%;
   }
   
-  img#taps {
+  #taps {
     width: 100%;
     height: auto;
   }
   
-  img#review {
+  #review {
     width: 50vh;
     height: auto;
   }
   
   
-  img#featured {
+  #featured {
     width: 100%;
     height: auto;
   }

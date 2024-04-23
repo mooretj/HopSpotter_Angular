@@ -1,43 +1,43 @@
 <div class="container">
-    <img id="banner" src="../assets/brews.jpg" alt="">
-    <div class="centered">
-      <h1 id="FindYour"></h1>
-    </div>
+  <img id="banner" src="../../assets/brews.jpg" alt="">
+  <div class="centered">
+    <h1 id="FindYour">{{ beer?.beerName }}</h1>
+  </div>
 </div>
 <div class="all">
 <div class="content-centered">
 <div class="beer-content">
-    <img class="beerImage" >
-  </div>
-  <div class='beer-details'>
-  <div class="beerImage">
-    <img class='beer-img' >
-  </div>
-  <div class='beer-details'>
+  <img class="beerImage" src="{{ this.beer?.imgUrl }}" alt="">
+<!-- </div> -->
+<!-- <div class='beer-details'>
+<div class="beerImage">
+  <img class='beer-img' :src=beer.beer_img alt="">
+</div> -->
+<div class='beer-details'>
 
-    <div class="description">
-      <label class='label'>Description:</label>
-      <div class='detail'></div>
-    
-    <div class="stats">
-      <div class="abv inline">
-        <label class='label'>ABV:&nbsp;</label>
-        <div class='detail'>%</div>
-      </div>
+  <div class="description">
+    <label class='label'>Description:</label>
+    <div class='detail'>{{ beer?.beerDescription }}</div>
+  
+  <div class="stats">
+    <div class="abv inline">
+      <label class='label'>ABV:&nbsp;</label>
+      <div class='detail'>{{ beer?.abv }}%</div>
+    </div>
 
-      <div class="type inline">
-        <label class='label'> Type:&nbsp;</label>
-        <div class='detail'></div>
-      </div>
+    <div class="type inline">
+      <label class='label'> Type:&nbsp;</label>
+      <div class='detail'>{{ beer?.type }}</div>
     </div>
   </div>
+</div>
+</div>
   </div>
-    </div>
-  </div>
+</div>
 
-  <!-- <div class='review-list'>
-    <ReviewList />
-  </div> -->
+  <div class='review-list'>
+    <app-review-list />
+  </div>
   
 
 
@@ -52,7 +52,7 @@
     <!-- </div> -->
 
     <div class='return'>
-      <button class='back-to-brewery'
+      <button class='back-to-brewery' [routerLink]="['/breweries', beer?.breweryId]"
         >More
         From This Brewery</button>
     </div>

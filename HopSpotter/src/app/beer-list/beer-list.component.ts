@@ -20,8 +20,6 @@ export class BeerListComponent  {
 
     const breweryId = +this.route.snapshot.params["breweryId"];
 
-    console.log(breweryId);
-
     if(breweryId === 0) {
       this.beerList = this.beerService.getAllBeers();
     }
