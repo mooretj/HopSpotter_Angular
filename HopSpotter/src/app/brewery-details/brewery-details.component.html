@@ -54,9 +54,11 @@
 
           <a class='contact-info' :href="{{ brewery?.website }}" target='_blank'>{{ brewery?.breweryName }} Website</a>
 
+          @if(loggedIn) {
           <div class="edit-contact" v-if="JSON.stringify(this.$store.state.user) !== '{}' && this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'">
               <button class="btn-edit-contact" v-on:click="editContact">Edit Contact Info</button>
             </div>
+          }
         </div>
         
 
@@ -125,7 +127,9 @@
             v-if="JSON.stringify(this.$store.state.user) !== '{}' && this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'">
 
             <div class="edit-hours">
+              @if(loggedIn) {
               <button class="btn-edit-hours" v-on:click="editHours">Edit Hours of Operation</button>
+              }
             </div>
           </div>
 

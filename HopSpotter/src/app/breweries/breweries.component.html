@@ -20,15 +20,14 @@
 
 </div>
 
-
+@if(loggedIn) {
 <div class="addbrewery"
   v-if='JSON.stringify(this.$store.state.user) !== "{}" && this.$store.state.user.authorities[0].name == "ROLE_ADMIN"'>
   <button class="add-brewery" v-on:click="$router.push({ name: 'AddBreweryView' })"> Add Brewery </button>
 
 </div>
-<div class="loading" v-if="isLoading">
-  <p>Loading...</p>
-</div>
+}
+
 <div v-else class="breweries">
 
   <div class="container">

@@ -13,6 +13,7 @@ import { ReviewListComponent } from '../review-list/review-list.component';
 })
 export class BeerDetailsComponent {
 
+  loggedIn = false;
   route: ActivatedRoute = inject(ActivatedRoute)
   beer: Beer | undefined
   beersService: BeersService = inject(BeersService)

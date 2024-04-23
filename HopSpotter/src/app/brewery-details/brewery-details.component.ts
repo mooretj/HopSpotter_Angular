@@ -14,6 +14,7 @@ import { BeersService } from '../beers.service';
 })
 export class BreweryDetailsComponent {
 
+  loggedIn = false;
   route: ActivatedRoute = inject(ActivatedRoute);
   brewery: Brewery | undefined;
   breweriesService: BreweriesService = inject(BreweriesService)

@@ -1,1 +1,44 @@
-<p>beer-details-card works!</p>
+<div id="all" class="all">
+    <div class="flip-card" [routerLink]="['/breweries', beer?.breweryId, 'beers', beer?.beerId]">
+
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="beerName" id="beerName">
+            <h3>Brewery Name - {{ beer?.beerName }}</h3>
+          </div>
+          <div id="beerCardFront" class="beerCardFront">
+            <div id="container">
+              <img id="reviewPic" class="reviewPic" :src='{{ beer?.imgUrl }}' alt="">
+            </div>
+          </div>
+
+          <h4>{{ review?.title }}</h4>
+          <h5 class='username'>- {{ review?.username }}</h5>
+          <div class="rating">
+            <img src="../assets/pint.png" v-bind:title="review.rating + ' Star Review'" class="ratingStar"
+               />
+              <p class="outof">{{ review?.rating }} out of 5 pints</p>
+          </div>
+          <p>{{ review?.body }}
+          </p>
+
+
+        </div>
+        <div class="flip-card-back">
+          <div class="beer">
+            <label>ABV:</label>
+            <span>{{ beer?.abv }}%</span>
+          </div>
+
+          <div class="beer">
+            <label>Style:</label>
+            <span>{{ beer?.type }}</span>
+          </div>
+          <div class="beer">
+            <label>Description:</label>
+            <span>{{ beer?.beerDescription }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

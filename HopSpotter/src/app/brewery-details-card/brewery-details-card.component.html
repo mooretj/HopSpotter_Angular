@@ -1,1 +1,21 @@
-<p>brewery-details-card works!</p>
+<div class="BreweryDetailsMain" id="overlay" :style="`background-image: url{{ brewery?.breweryMainImg }};`">
+    <div class="dim">
+        <div class="featuredBrewery">
+    <div class="name">
+        <h1 class="brewery-name">{{ brewery?.breweryName }}</h1>
+        <img class="brewery-img" :src="brewery.brewery_main_img" alt=""/>
+    </div>
+
+    <div class="BreweryDetails">
+
+        <div class="history">
+            <label>About Us:</label><br>
+            <span>{{ brewery?.history }}</span>
+        </div>
+
+        <div class="brewery link">
+            <button class="btn-see-beers" [routerLink]="['/breweries', brewery?.breweryId ]">See More</button>
+        </div>
+      </div>
+    </div>
+</div>

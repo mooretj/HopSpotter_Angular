@@ -12,6 +12,7 @@ import { BeersService } from '../beers.service';
 })
 export class BeerListComponent  {
 
+  loggedIn = false;
   beerList: Beer[] = [];
   beerService: BeersService = inject(BeersService);
   route: ActivatedRoute = inject(ActivatedRoute)

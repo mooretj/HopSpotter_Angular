@@ -12,6 +12,7 @@ import { BreweriesService } from '../breweries.service';
 })
 export class BreweriesComponent {
 
+  loggedIn = false;
   breweries: Brewery[] = []
   breweriesService: BreweriesService = inject(BreweriesService);
 

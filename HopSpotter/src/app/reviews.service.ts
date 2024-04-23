@@ -86,5 +86,10 @@ export class ReviewsService {
       (review) => review?.beerId === beerId))
   }
 
+  getIndividualReviewbByBeerId(beerId: number) {
+    return (this.reviews.find(
+      (review) => review.beerId === beerId))
+  }
+
   constructor() { }
 }

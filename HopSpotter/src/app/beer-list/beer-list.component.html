@@ -29,9 +29,11 @@
     </div>
 
   </div>
+  @if (loggedIn) {
   <button class="btn-add" v-on:click="addBeer"
     v-if='JSON.stringify(this.$store.state.user) !== "{}" && this.$store.state.user.authorities[0].name == "ROLE_ADMIN" && this.$route.params.breweryId != 0 || this.$store.state.user.brewer == true '>Add
     Beer</button>
+  }
   <br>
   <!-- <div v-if='this.$route.params.breweryId != 0'>
   <div class='return'>
