@@ -41,9 +41,9 @@
   
 
 
-  <!-- <div>
-    <button class='reviews' @click="$router.push({ name: 'ReviewListView', params: {beerId: beerId} })">See Reviews</button>
-  </div> -->
+  <div>
+    <button class='reviews' [routerLink]="['/breweries', beer?.breweryId, 'beers', beer?.beerId, 'review' ]">Add a Review</button>
+  </div>
   
   <div class='buttons'>
     @if (loggedIn) {

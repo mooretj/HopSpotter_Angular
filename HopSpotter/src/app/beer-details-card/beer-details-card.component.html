@@ -15,7 +15,7 @@
           <h4>{{ review?.title }}</h4>
           <h5 class='username'>- {{ review?.username }}</h5>
           <div class="rating">
-                @for(rating of getRatingArray(review!.rating); track rating) {
+                @for(rating of getRatingArray(review?.rating ?? 0); track rating) {
                     <img src="../assets/pint.png" class="ratingStar"/>
                 }
             

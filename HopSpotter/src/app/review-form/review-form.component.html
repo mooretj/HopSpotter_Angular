@@ -1,0 +1,34 @@
+<div class="all">
+    <form [formGroup]="reviewForm" class='form' (ngSubmit)="addReview()">
+
+        <div class="text-center">
+            <div class="form-input-group">
+                <input class='textEntry' type="text" id="reviewTitle" formControlName="title"
+                    placeholder="Review Title" />
+            </div>
+
+            <div class="form-input-group">
+                <textarea class='review' name='reviewBody' id="reviewBody" rows='10' cols='20' formControlName="review"
+                    placeholder="Review"></textarea>
+            </div>
+
+            <div class="form-input-group">
+                <label for="beerRating">Rating: </label>
+                <select class="ratingOptions" name="rating" formControlName="rating" required>
+                    <option class="ratingOptions" disabled selected>Please select a rating</option>
+                    <option class="ratingOptions">1</option>
+                    <option class="ratingOptions">2</option>
+                    <option class="ratingOptions">3</option>
+                    <option class="ratingOptions">4</option>
+                    <option class="ratingOptions">5</option>
+                </select>
+            </div>
+
+            <div class='submitcancel'>
+                <button class="submit" [disabled]="!reviewForm.valid" (click)="addReview()">Add Review</button>
+                <button class="cancel" type="button" [routerLink]='["../"]'>Cancel</button>
+            </div>
+
+        </div>
+    </form>
+</div>

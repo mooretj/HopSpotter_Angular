@@ -1,0 +1,51 @@
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.form-input-group{
+  width: 100vw;
+  font-size: 22px;
+}
+
+.textEntry {
+  width: 50%;
+  font-size: 22px;
+  margin: 3px;
+  height: 28px;
+}
+
+.review {
+  width: 50%;
+  font-size: 22px;
+  resize: none;
+  margin: 3px;
+}
+
+.button {
+  width: 200px;
+
+}
+
+.rating {
+  width: 50%;
+}
+
+.submitcancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingOptions {
+  color: black;
+}

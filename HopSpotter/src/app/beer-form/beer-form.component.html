@@ -1,0 +1,42 @@
+<div class="text-center">
+    <form [formGroup]="beerForm" (ngSubmit)="addBeer()">
+    <div class="form">
+      <!-- <div class="form-input-group">
+        <label for="beerId">Beer ID: </label>
+        <input type="text" id="beerId" v-model="editBeer.beer_id" />
+      </div>
+
+      <div class="form-input-group">
+        <label for="breweryId">Brewery ID: </label>
+        <input type="text" id="breweryId" v-model="editBeer.brewery_id" />
+      </div> -->
+
+        <div class="form-input-group">
+          <input type="text" id="name" formControlName="name" placeholder="Beer Name"   class="textEntry" />
+        </div>
+
+        <div class="form-input-group">
+          <input type="text" id="beerImage" formControlName="image" placeholder="Beer Image URL"  class="textEntry" />
+        </div>
+
+        <div class="form-input-group">
+          <input type="abv" id="abv" formControlName="abv" placeholder="ABV"  class="textEntry" />
+        </div>
+
+        <div class="form-input-group">
+          <input type="text"  id="beerType" formControlName="type" placeholder="Beer Type"  class="textEntry" />
+        </div>
+
+        <div class="form-input-group">
+          <textarea rows="5" type="text" id="description" class="description" formControlName="description" placeholder="Description"></textarea>
+        </div>
+        <div class="submitcancel">
+        <button class="button" type="submit" [disabled]="!beerForm.valid" (click)="addBeer()">Submit Beer</button>
+        <button class="button" type="button" [routerLink]="['../']">Cancel</button>
+      </div>
+      </div>
+      
+
+    </form>
+  
+</div>

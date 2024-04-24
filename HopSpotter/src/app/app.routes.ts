@@ -8,6 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { BreweryDetailsComponent } from './brewery-details/brewery-details.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ReviewFormComponent } from './review-form/review-form.component';
+import { BreweryFormComponent } from './brewery-form/brewery-form.component';
+import { BeerFormComponent } from './beer-form/beer-form.component';
 
 export const routes: Routes = [
   {
@@ -34,6 +37,11 @@ export const routes: Routes = [
     component: BreweryDetailsComponent,
   },
   {
+    path: 'breweries/:breweryId/createBrewery',
+    component: BreweryFormComponent,
+    title: 'New Brewery'
+  },
+  {
     path: 'breweries/:breweryId/beers',
     component: BeerListComponent,
     title: 'All Beers'
@@ -43,9 +51,19 @@ export const routes: Routes = [
     component: BeerDetailsComponent,
   },
   {
+    path: 'breweries/:breweryId/add',
+    component: BeerFormComponent,
+    title: 'New Beer'
+  },
+  {
     path: 'register',
     component: RegisterComponent,
     title: 'Register'
+  },
+  {
+    path: 'breweries/:breweryId/beers/:beerId/review',
+    component: ReviewFormComponent,
+    title: 'New Review'
   },
   {
     path: '**',
