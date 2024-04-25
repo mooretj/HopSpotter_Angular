@@ -1,1 +1,126 @@
-<p>brewery-form works!</p>
+<div>
+    <h1>Add Brewery</h1>
+</div>
+<div class="form">
+
+    <form class="formLeft" [formGroup]="breweryForm">
+        <div>
+            <input type="text" id="name" class="textEntry" formControlName="name" placeholder="Brewery Name" />
+        </div>
+
+        <div>
+            <input type="text" id="website" class="textEntry" formControlName="website" placeholder="Website URL" />
+        </div>
+
+        <div>
+            <input type="text" id="mainImg" class="textEntry" formControlName="mainImage" placeholder="Brewery Image" />
+        </div>
+        <input type="text" id="address" class="textEntry" formControlName="address" placeholder="Address" />
+
+        <div>
+            <input type="text" id="logoImg" class="textEntry" formControlName="logo" placeholder="Brewery Logo URL" />
+        </div>
+
+
+        <div>
+            <input type="text" id="email" class="textEntry" formControlName="email" placeholder="Email" />
+        </div>
+
+        <div>
+            <input type="text" id="phone" class="textEntry" formControlName="phone" placeholder="Phone Number" />
+        </div>
+
+        <div>
+            <textarea name="history" id="history" rows="5" placeholder="About Us" class="history"
+                formControlName="about"></textarea>
+        </div>
+    </form>
+    <form class="formRight" [formGroup]="hoursForm">
+        <table>
+            <tbody>
+                <tr>
+                    <td> <label for="hours">Hours of Operation</label></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="border_bottom">
+                    <td> <label for="sunday">Sunday:</label>
+                    </td>
+                    <td> <input type="time" id="sunday" formControlName="sundayOpen" [disabled]="dayDisabledMap['sunday']"> -
+                        <input type="time" id="sunday" formControlName="sundayClose" [disabled]="dayDisabledMap['sunday']">
+                    </td>
+                    <td> <label for="sunday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="sundayCheckbox" (change)="(hoursDisable('sunday'))">
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td> <label for="monday">Monday:</label></td>
+                    <td> <input type="time" id="monday" formControlName="mondayOpen" [disabled]="dayDisabledMap['monday']"> -
+                        <input type="time" id="monday" formControlName="mondayClose" [disabled]="dayDisabledMap['monday']">
+                    </td>
+                    <td> <label for="monday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="mondayCheckbox" (change)="(hoursDisable('monday'))">
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td> <label for="tuesday">Tuesday: </label></td>
+                    <td> <input type="time" id="tuesday" formControlName="tuesdayOpen" [disabled]="dayDisabledMap['tuesday']"> -
+                        <input type="time" id="tuesday" formControlName="tuesdayClose" [disabled]="dayDisabledMap['tuesday']">
+                    </td>
+                    <td> <label for="tuesday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="tuesdayCheckbox" (change)="(hoursDisable('tuesday'))">
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td><label for="wednesday">Wednesday: </label></td>
+                    <td> <input type="time" id="wednesday" formControlName="wednesdayOpen" [disabled]="dayDisabledMap['wednesday']">
+                        -
+                        <input type="time" id="wednesday" formControlName="wednesdayClose" [disabled]="dayDisabledMap['wednesday']">
+                    </td>
+                    <td> <label for="wednesday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="wednesdayCheckbox" (change)="(hoursDisable('wednesday'))">
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td><label for="thursday">Thursday: </label></td>
+                    <td> <input type="time" id="thursday" formControlName="thursdayOpen" [disabled]="dayDisabledMap['thursday']">
+                        -
+                        <input type="time" id="thursday" formControlName="thursdayClose" [disabled]="dayDisabledMap['thursday']">
+                    </td>
+                    <td> <label for="thursday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="thursdayCheckbox" (change)="(hoursDisable('thursday'))">
+                    </td>
+                </tr>
+                <tr class="border_bottom">
+                    <td><label for="friday">Friday: </label></td>
+                    <td> <input type="time" id="friday" formControlName="fridayOpen" [disabled]="dayDisabledMap['friday']"> -
+                        <input type="time" id="friday" formControlName="fridayClose" [disabled]="dayDisabledMap['friday']">
+                    </td>
+                    <td> <label for="friday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="fridayCheckbox" (change)="(hoursDisable('friday'))">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="saturday">Saturday: </label></td>
+                    <td> <input type="time" id="saturday" formControlName="saturdayOpen" [disabled]="dayDisabledMap['saturday']">
+                        -
+                        <input type="time" id="saturday" formControlName="saturdayClose" [disabled]="dayDisabledMap['saturday']">
+                    </td>
+                    <td> <label for="saturday">Closed for the day:</label>
+                        <input type="checkbox" formControlName="saturdayCheckbox" (change)="(hoursDisable('saturday'))">
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+    </form>
+
+</div>
+<div class="submitcancel">
+    <div>
+        <button class="button" type="submit" (click)="addBrewery()" [disabled]="!breweryForm.valid">Add Brewery</button>
+        <button class="button" type="button" [routerLink]="['../']">Cancel</button>
+    </div>
+</div>

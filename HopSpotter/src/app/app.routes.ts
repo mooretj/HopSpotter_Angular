@@ -33,13 +33,18 @@ export const routes: Routes = [
     component: BreweriesComponent,
   },
   {
+    path: 'breweries/create',
+    component: BreweryFormComponent,
+    title: 'New Brewery'
+  },
+  {
     path: 'breweries/:breweryId',
     component: BreweryDetailsComponent,
   },
   {
-    path: 'breweries/:breweryId/createBrewery',
-    component: BreweryFormComponent,
-    title: 'New Brewery'
+    path: 'breweries/:breweryId/add',
+    component: BeerFormComponent,
+    title: 'New Beer'
   },
   {
     path: 'breweries/:breweryId/beers',
@@ -49,11 +54,6 @@ export const routes: Routes = [
   {
     path: 'breweries/:breweryId/beers/:beerId',
     component: BeerDetailsComponent,
-  },
-  {
-    path: 'breweries/:breweryId/add',
-    component: BeerFormComponent,
-    title: 'New Beer'
   },
   {
     path: 'register',

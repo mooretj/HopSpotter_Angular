@@ -1,0 +1,64 @@
+
+.form {
+    background-color: black;
+    opacity: .8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+
+.formLeft {
+    width: 40vw;
+    text-align: center;
+
+}
+
+.text {
+    text-align: center;
+
+}
+
+.formRight {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    width: 40vw;
+}
+
+.textEntry {
+    width: 75%;
+    margin: 3px;
+    height: 28px;
+    font-size: 22px;
+}
+
+table {
+    border-spacing: 0 10px;
+
+}
+
+tr.border_bottom td {
+    border-bottom: 1px solid white;
+
+}
+
+.history {
+    width: 75%;
+    resize: none;
+    margin: 3px;
+    font-size: 22px;;
+}
+
+.button {
+    width: 200px;
+
+
+
+}
+.submitcancel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

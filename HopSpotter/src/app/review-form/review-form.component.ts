@@ -18,7 +18,7 @@ export class ReviewFormComponent {
   })
 
   addReview() {
-    console.log(this.reviewForm)
+    console.log(this.reviewForm.value.title)
     this.reviewForm.reset()
   }
 }
